@@ -66,12 +66,12 @@ def get_trm() -> float:
 # Draw the actual page
 
 # Set the title that appears at the top of the page.
-'''
+st.markdown('''
 # :earth_americas: Transcripción de Audio
 
 Esta aplicación es una interfaz para utilizar el modelo Whisper-large V2 apartir de la API de OpenAI, el costo de transcripción es de 0.006 por minuto. Solo tienes que poner tu [apikey de openai](https://openai.com) y luego puedes seleccionar cualquier archivo para transcribirlo.
 Creado por Arturo Rebolledo para transcribir las reuniones del club rotaract Barranquilla Caribe.
-'''
+''')
 
 # Add some spacing
 ''
@@ -97,6 +97,10 @@ timestamps = st.sidebar.checkbox("Timestamps")
 
 # st.sidebar.button("Transcribir", on_click=)
 
+st.sidebar.markdown('''
+
+_Creado por Arturo Rebolledo Econometrista y Desarrollador de Software_
+''')
 if audio:
     audio.name
     cost:int = math.ceil(AudioSegment.from_file(audio).duration_seconds /60)
@@ -147,4 +151,5 @@ if audio:
             os.remove(chunk)
         else:
             st.error("Por favor, ingresa tu apikey de OpenAI")
+
 
