@@ -92,7 +92,7 @@ audio = st.sidebar.file_uploader(type="mp3", label="Archivo De Audio")
 
 language = st.sidebar.selectbox("Idioma", ["es", "en"])
 
-st.sidebar.checkbox("Markdown")
+# st.sidebar.checkbox("Markdown")
 timestamps = st.sidebar.checkbox("Timestamps")
 
 # st.sidebar.button("Transcribir", on_click=)
